@@ -1,0 +1,103 @@
+
+
+.subscribe-form__wrap {
+    @include block-center;
+    font-size: 0;
+    font-family: $cabin;
+    .subscribe-form {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        input {
+            padding: 0 15px;
+            &::-webkit-input-placeholder {
+                color: rgba(0, 0, 0, 0.54) !important;
+            }
+
+            &::-moz-placeholder {
+                color: rgba(0, 0, 0, 0.54) !important;
+            }
+
+            &:-ms-input-placeholder {
+                color: rgba(0, 0, 0, 0.54) !important;
+            }
+        }
+        &.form-vertical {
+            max-width: 235px;
+            .form-control,
+            .btn {
+                display: block;
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+    &.subscribe--gray {
+        .form-control {
+            background-color: #f7f7f7;
+        }
+    }
+    .form-control,
+    .btn {
+        font-size: 1.6rem;
+        border: 0;
+        height: 3.8rem;
+    }
+    @media (min-width: 768px) {
+        .news-section & {
+            float: right;
+        }
+    }
+    @media (max-width: 991px) and (min-width: 768px) {
+        max-width: 195px;
+    }
+    @media (max-width: 991px) {
+        .subscribe-form,
+        .form-control,
+        .btn {
+            display: block;
+            width: 100%;
+        }
+    }
+    @media (max-width: 767px) {
+        .subscribe-form {
+            &.form-vertical {
+                display: inline-block;
+            }
+            input {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.subscribe-form__success-message {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -143.5px;
+    margin-top: -50px;
+    width: 287px;
+    height: 100px;
+    background-color: #00aa9f;
+    padding: 19px 38px;
+    z-index: 20;
+    .form-inline > & {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+    }
+    img {
+        margin-bottom: 7px;
+    }
+    h2 {
+        width: 211px;
+        height: 34px;
+        color: white;
+        font-family: Cabin;
+        font-size: 15px;
+        font-weight: 500;
+        letter-spacing: 0.53px;
+        line-height: 17px;
+    }
+}

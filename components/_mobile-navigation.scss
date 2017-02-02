@@ -1,0 +1,175 @@
+.navbar__mobile-menu__toggle {
+    position: absolute;
+    z-index: 7;
+    top: 4px;
+    right: 15px;
+    display: none;
+    @media (max-width: 1023px) {
+        display: block;
+    }
+}
+
+.navbar__mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -110%;
+    @include square(100%);
+    background-color: $teal;
+    color: #fff;
+    z-index: 6;
+    transition: left .4s;
+    &.is-opened {
+        left: 0;
+    }
+    //.anchors-panel__item {
+    //    &:hover,
+    //    &.mPS2id-highlight {
+    //        color: $teal;
+    //    }
+    //}
+}
+
+.mobile-menu__body {
+    position: absolute;
+    left: 20px;
+    width: 100%;
+    top: 10%;
+    font-weight: $bold;
+}
+
+.navbar__anchors-panel--mobile,
+.navbar__lang-panel--mobile {
+    @include reset-list;
+    li {
+        font-size: 27px;
+    }
+}
+
+.mobile-menu__container {
+    @include margin-h(auto);
+    @include padding-h(15px);
+    max-width: 80%;
+    min-width: 300px;
+}
+
+.navbar__anchors-panel--mobile {
+    margin-bottom: $margin;
+    a {
+        text-transform: lowercase;
+    }
+}
+
+.navbar__lang-panel--mobile {
+    @include inline-list;
+    li {
+        padding: 10px;
+        &:not(:first-child) {
+            border-left: 2px solid currentColor;
+        }
+    }
+    a {
+        box-shadow: none !important;
+        padding: 3px !important;
+        &.active {
+            border-bottom: 2px solid #fff;
+        }
+    }
+}
+
+.c-hamburger {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    text-indent: -9999px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.c-hamburger span {
+    display: block;
+    position: absolute;
+    top: 13px;
+    left: 10px;
+    right: 5px;
+
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+}
+
+.c-hamburger {
+    span,
+    span:before,
+    span:after {
+        height: 3px;
+        background-color: #fff;
+        transition: .3s;
+    }
+    .header__navbar--shrink & {
+        span,
+        span:before,
+        span:after {
+            background-color: $color-base;
+        }
+    }
+}
+
+.c-hamburger span::before {
+    top: -7px;
+}
+
+.c-hamburger span::after {
+    bottom: -7px;
+}
+
+.c-hamburger--htx {
+    background-color: transparent;
+}
+
+.c-hamburger--htx span::after {
+    transition-property: bottom, transform;
+}
+
+/* active state, i.e. menu open */
+.c-hamburger--htx.is-active {
+    background-color: transparent;
+}
+
+.c-hamburger--htx.is-active span {
+    background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+    bottom: 0;
+    transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+    // transition-delay: 0s, 0.3s;
+    background-color: white;
+}

@@ -1,0 +1,51 @@
+$normal: 400;
+$semi: 500;
+$bold: 700;
+
+$cabin: 'Cabin', sans-serif;
+$roboto: 'Roboto', sans-serif;
+$bitter: 'Bitter', serif;
+$ptSans: 'PT Sans', sans-serif;
+
+$font-base: $cabin;
+$font-title: $bitter;
+$font-quote: $ptSans;
+$font-info: $roboto;
+
+$border: 2px solid currentColor;
+
+$gray-shadow: 1px 1px 5px 1px rgba(0,0,0,0.3);
+
+$trans-length: .3s;
+
+$header-nav-height-lg: 100px;
+$header-nav-height: 50px;
+$header-nav-height-sm: 40px;
+
+$section-v-padding: 65px;
+$margin: 30px;
+
+$blue-lt: #c0c0c0;
+$blue-dk: #c0c0c0;
+$blue: #c0c0c0;
+$green: #c0c0c0;
+$green-dk: #c0c0c0;
+$green-lt: #c0c0c0;
+$orange: #c0c0c0;
+$orange-dk: #c0c0c0;
+$orange-lt: #c0c0c0;
+
+$teal: #00aa9f;
+
+$color-base: #6f6f6f;
+
+$black-transparent-dk: rgba(#2a2a2a, 0.85);
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1;
+  }
+}

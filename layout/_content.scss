@@ -1,0 +1,447 @@
+*:focus {
+    outline: 0 !important;
+}
+
+html {
+    font-size: 10px;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+small {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 1.4;
+    em {
+        font-size: inherit;
+    }
+}
+
+em {
+    font-size: 0.95em;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    @include transition($trans-length);
+    @include on-state {
+        text-decoration: none;
+        opacity: .86;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    margin-top: 0;
+    margin-bottom: .6em;
+    line-height: 1.4;
+    letter-spacing: 0.059em
+}
+
+h2,
+.h2 {
+    @media (max-width: 767px) {
+        font-size: 3.3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    p.h2 {
+        font-size: 23px;
+    }
+}
+
+h3,
+.h3 {
+    font-size: 1.9rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: $font-base;
+    color: $color-base;
+    background-color: #f5f5f5;
+}
+
+.btn {
+    font-size: 1.7rem;
+    padding: .563em;
+    font-weight: 500;
+    letter-spacing: 0.61px;
+}
+
+.ls-lg {
+    letter-spacing: .15em;
+}
+
+.page-wrapper {
+    overflow: hidden;
+}
+
+.container {
+    @media (min-width: 1024px) {
+        width: 880px;
+    }
+    @media (min-width: 1900px) {
+        width: 1717px;
+    }
+}
+
+.container-narrow {
+    @include margin-h(auto);
+    @include padding-h(15px);
+    max-width: 700px;
+}
+
+.section-title {
+    display: block;
+    margin-bottom: 1em;
+    color: #000;
+    font-family: $bitter;
+    text-transform: uppercase;
+    .bg-teal & {
+        color: #fff;
+    }
+    @include decoration-line--bottom();
+    &:after {
+        margin-top: 5px;
+        height: 7px;
+    }
+    @media (min-width: 768px) {
+        font-size: 33px;
+    }
+}
+
+.page-section {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: 1.9rem;
+    background-color: #fff;
+
+    // To prevent breaks in the sections' white background
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    padding: 10px 0 45px;
+    &:first-child {
+        padding-top: 60px;
+    }
+    img + &,
+    &.bg-teal {
+        padding-top: 45px;
+    }
+    .homepage & {
+        padding: 55px 0;
+    }
+    .specialiteitenpage &.tiles-section {
+        @media (min-width: 1200px) {
+            padding-bottom: 80px;
+        }
+    }
+    &.feesten-contact-section {
+        padding: 45px 0 55px;
+    }
+    &.has-max-width {
+        max-width: 1500px;
+        margin: 0 auto;
+    }
+    &.no-padding {
+        padding: 0;
+    }
+    .anchors-panel__item {
+        &:hover,
+        &.current-page,
+        &.mPS2id-highlight-first {
+            color: $teal;
+        }
+    }
+    p {
+        @include margin-h(auto);
+        max-width: 735px;
+        margin-bottom: 25px;
+        font-weight: $semi;
+        letter-spacing: 0;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @media (max-width: 1200px) {
+        padding: 10px 0 30px;
+    }
+}
+
+.page-section--welcome,
+.page-section--brands,
+.page-section--about {
+    p {
+        font-weight: $bold;
+    }
+}
+
+.page-section--products {
+    .block-padding {
+        padding-bottom: 38px;
+    }
+    @media (max-width: 767px) {
+        .block-padding {
+            padding-top: 115px;
+            padding-bottom: 88px;
+            h2 {
+                font-size: 31px;
+                line-height: 1.6;
+                font-weight: 400;
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+.page-section--contact {
+    .section-title + p {
+        font-weight: $bold;
+    }
+    .contact__info {
+        strong {
+            font-size: 18px;
+        }
+    }
+}
+
+.vertical-center {
+    @include centered-v;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.list--decorated {
+    padding: 0;
+    li {
+        list-style: none;
+        margin: 0 0 10px;
+        &:not(:last-child) {
+            @include decoration-line--bottom(2px);
+            &:after {
+                width: 12px;
+            }
+        }
+    }
+}
+
+.col-image {
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .img-badge {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+    }
+}
+
+@media (max-width: 991px) {
+    .col-image,
+    .col-slide-image {
+        order: 1;
+    }
+    .col-slide-article,
+    .col-article {
+        order: 2;
+    }
+    .col-slide-article {
+        padding: 20px 30px;
+    }
+    .col-article {
+        @include padding-v(55px);
+    }
+}
+
+.page-list {
+    @include reset-list;
+    margin-top: 4rem;
+    li {
+        margin-bottom: 4rem;
+    }
+    @media (max-width: 767px) {
+        li:last-child {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+.double-decoration {
+    @include decoration-line--top();
+    @include decoration-line--bottom();
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    padding-bottom: 39%;
+    overflow: hidden;
+    > .map-scroll-overlay {
+        z-index: 1;
+    }
+    > .map-scroll-overlay,
+    > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    @media (max-width: 768px) {
+        padding-bottom: 115%;
+    }
+}
+
+.tiles-section {
+    [class^='col-'] {
+        order: 0 !important;
+    }
+
+    .col-image {
+        align-self: stretch;
+        background-color: #fff;
+    }
+
+    .double-decoration {
+        &:before,
+        &:after {
+            height: 4px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .col-article {
+            &:last-child {
+                padding: 82px 0;
+            }
+        }
+    }
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.text-lg {
+    font-size: 1.9rem;
+}
+
+.homepage {
+    @media (min-width: 768px) {
+        #section3 {
+            br {
+                display: none;
+            }
+        }
+    }
+    .page-section.welcome-section {
+        padding: 45px 0 55px;
+    }
+    .page-section.blockquote-section {
+        @include before-absolute {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #3c5400;
+            opacity: .2;
+        }
+        > div {
+            position: relative;
+        }
+    }
+    @media (max-width: 767px) {
+        .page-section.blockquote-section {
+            background-image: url(../images/bg/bg-landing-blockquote-mobile.jpg);
+            position: relative;
+            padding: 85px 0;
+
+            blockquote {
+                &:before {
+                    margin-bottom: 7px;
+                }
+                &:after {
+                    margin-top: 7px;
+                }
+            }
+        }
+
+        #section2,
+        #section3,
+        #section4,
+        #section5 {
+            p {
+                margin: 0;
+            }
+            p + .btn {
+                margin-top: 20px;
+            }
+        }
+        .col-image {
+            .img-badge {
+                top: auto;
+                right: auto;
+                bottom: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
+.specialiteitenpage {
+    .bg-teal.pdf-section {
+        padding: 25px 0 30px;
+    }
+    .btn-pdf {
+        margin-right: 10px;
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+        .btn-pdf {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    p.h2 {
+        font-size: 23px
+    }
+}
+
+p.p-40 {
+    margin-bottom: 45px;
+}

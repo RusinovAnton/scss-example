@@ -1,0 +1,32 @@
+[class*='icon-'] {
+    display: inline-block;
+    &:before {
+        content: '';
+        display: block;
+        background-size: 100%;
+    }
+}
+
+.icon-pdf {
+    &:before {
+        width: 21px;
+        height: 33px;
+        background-image: url(../images/icon-pdf.png);
+    }
+}
+
+.icon-pdf--green {
+    &:before {
+        width: 21px;
+        height: 33px;
+        background-image: url(../images/icon-pdf-green.png);
+    }
+}
+
+.icon-facebook {
+    &:before {
+        width: 34px;
+        height: 34px;
+        background-image: url(../images/facebook-white.png);
+    }
+}

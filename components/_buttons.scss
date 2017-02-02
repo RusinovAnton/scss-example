@@ -1,0 +1,68 @@
+.btn-outline {
+    @include padding-h(1.5rem);
+    border-width: 1.5px;
+    border-color: currentColor;
+    text-transform: uppercase;
+}
+
+.btn-pdf {
+    padding-right: 55px;
+    [class^='icon-'] {
+        position: absolute;
+        right: 10px;
+        top: 3px;
+    }
+    @include before-absolute {
+        height: 100%;
+        width: 44px;
+        right: 0;
+        top: 0;
+        background: currentColor;
+    }
+}
+
+.btn-facebook-follow {
+    width: 201px;
+    height: 48px;
+    border-color: transparent !important;
+    color: #fff !important;
+    font-family: $cabin;
+    background-color: rgba(73, 143, 225, 0.5);
+    transition: background-color .2s;
+    position: relative;
+    padding: 13px 10px 13px 49px;
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: 0;
+    &.large-one {
+        width: 287px;
+        height: 68px;
+        font-size: 22px;
+        padding-left: 65px;
+        line-height: 38px;
+        .icon-facebook {
+            @include square(50px);
+            top: 9px;
+            &:before {
+                width: inherit;
+                height: inherit;
+            }
+        }
+    }
+    &.non-transparent {
+        background-color: rgba(73, 143, 225, 0.9);
+        &:hover {
+            background-color: rgba(73, 143, 225, 0.7);
+        }
+    }
+    .icon-facebook {
+        display: block;
+        position: absolute;
+        left: 9px;
+        top: 6px;
+        @include square(35px);
+    }
+    &:hover {
+        background-color: rgba(73, 143, 225, 0.9);
+    }
+}

@@ -1,0 +1,14 @@
+.page-section.blockquote-section {
+    padding: 100px 0;
+    background-image: url(../images/bg/bg-landing-blockquote.png);
+    background-size: cover;
+    background-position: 50%;
+    blockquote {
+        @include decoration-line--top();
+        @include decoration-line--bottom();
+        color: #fff;
+        font-family: $ptSans;
+        font-size: 3.2rem;
+        text-shadow: 0 2px 14px black;
+    }
+}

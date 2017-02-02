@@ -1,0 +1,54 @@
+$vendor-prefixes: false;
+@import '../../node_modules/scss-mixins-collection/mixins/__mixins';
+
+@mixin jumbo-gradient {
+    @include before-absolute {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(180deg, rgba(103, 55, 3, 0.54) 0%, transparent 100%);
+    }
+}
+
+$decoration-line-default-height: 5px;
+$decoration-line-margin: 15px;
+
+@mixin decoration-line($height: $decoration-line-default-height) {
+    @include margin-h(auto);
+    content: '';
+    display: block;
+    width: 54px;
+    height: $height;
+    background-color: currentColor;
+}
+
+@mixin decoration-line--top($height: $decoration-line-default-height) {
+    &:before {
+        @include decoration-line($height);
+        margin-bottom: $decoration-line-margin;
+    }
+}
+
+@mixin decoration-line--bottom($height: $decoration-line-default-height) {
+    &:after {
+        @include decoration-line($height);
+        margin-top: $decoration-line-margin;
+    }
+}
+
+@mixin jumbo-gradient-2 {
+    background-color: rgba(60, 84, 0, 0.2);
+}
+
+@mixin fb-button {
+    width: 201px;
+    height: 48px;
+
+}
+
+@mixin photo-box {
+    /* Style for "De_Zwaan_0" */
+    width: 527px;
+    height: 351px;
+}

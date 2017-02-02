@@ -1,0 +1,361 @@
+.site-header {
+    color: #fff;
+    a {
+        color: inherit;
+    }
+}
+
+.logo-white {
+    .header__navbar--shrink & {
+        display: none;
+    }
+}
+
+.logo-golden {
+    display: none;
+    margin-top: 6px;
+    width: 126px;
+    .header__navbar--shrink & {
+        display: block;
+    }
+    @media (min-width: 1024px) {
+        margin-top: 8px;
+    }
+}
+
+.header__navbar {
+    @include transition-all($trans-length);
+    @include padding-v(25px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: content-box;
+    height: $header-nav-height;
+    z-index: 5;
+    > .container-fluid {
+        padding: 0 22px;
+    }
+    @media (max-width: 1023px) {
+        padding: 0;
+        height: $header-nav-height-sm; //40px;
+        > .container-fluid {
+            padding: 5px !important;
+        }
+    }
+}
+
+.header__jumbo__body {
+    height: 100%;
+
+    .img-badge {
+        position: absolute;
+        z-index: 1;
+        &.img-badge--bike {
+            left: 0;
+            bottom: 120px;
+            width: 109px;
+        }
+        &.img-badge--kids {
+            width: 150px;
+            left: 0;
+            bottom: 38px;
+        }
+        @media (min-width: 992px) and (max-width: 1024px) {
+            &.img-badge--bike {
+                width: 100px;
+                bottom: 16px;
+            }
+            &.img-badge--kids {
+                width: 150px;
+                bottom: 16px;
+                left: auto;
+                right: 0;
+            }
+        }
+
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+        .has-badges {
+            padding-bottom: 180px;
+        }
+    }
+    @media (max-height: 543px) and (orientation: landscape) {
+        .img-badge {
+            display: none;
+        }
+        .has-badges {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.header__jumbo--spec {
+    .header__jumbo__body {
+        .img-badge {
+            position: absolute;
+            width: 126px;
+            left: 0;
+            bottom: 16px;
+        }
+    }
+}
+
+.header__jumbo--fiesters {
+    .header__jumbo__body {
+        .img-badge--bike {
+            width: 100px;
+            bottom: -111px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+            @media (max-width: 991px) {
+                bottom: 16px;
+                left: auto;
+                right: 0;
+            }
+            @media (min-width: 1024px) {
+                width: 130px;
+                bottom: -148px;
+            }
+        }
+    }
+}
+
+.header__navbar--shrink {
+    background-color: #fff;
+    box-shadow: $gray-shadow;
+    color: $gray-light;
+    padding: 0;
+    > .container-fluid {
+        padding: 0 15px;
+    }
+    .navbar__contact-info {
+        transform: translateX(110%);
+    }
+    .navbar__anchors-panel {
+        @include padding-v(13px);
+    }
+    .navbar__lang-panel {
+        @include padding-v(12px);
+    }
+    @media (min-width: 1024px) and (max-width: 1200px) {
+        .navbar__col--logo {
+            padding-top: 5px;
+            img {
+                width: 100px;
+            }
+        }
+    }
+}
+
+.navbar__col--logo {
+    text-align: left;
+    img {
+        @include transition-all($trans-length)
+    }
+    @media (max-width: 1023px) {
+        .logo-link {
+            width: 109px;
+            margin-top: 2px;
+            margin-left: 4px;
+        }
+        img {
+            margin: 0 !important;
+        }
+    }
+}
+
+.navbar__anchors-panel,
+.navbar__lang-panel,
+.navbar__contact-info {
+    @include reset-list;
+    @include inline-list;
+    li {
+        font-size: 1.4rem;
+        font-weight: 500;
+        @media (min-width: 1280px) {
+            font-size: 1.7rem;
+        }
+    }
+}
+
+.navbar__anchors-panel {
+    padding-top: 13px;
+    padding-right: 10px;
+    text-align: right;
+    white-space: nowrap;
+    li > a,
+    .anchors-panel__item {
+        text-transform: lowercase;
+        &:hover,
+        &.current-page,
+        &.mPS2id-highlight {
+            color: $teal;
+
+        }
+    }
+    li {
+        margin: 0 10px;
+    }
+    @media (max-width: 1023px) {
+        li {
+            display: block;
+            text-align: left;
+            margin-bottom: 10px;
+            margin-left: 0;
+        }
+        a {
+            /* Base text style */
+            width: 199px;
+            height: 28px;
+            color: white;
+            font-family: Cabin;
+            font-size: 23px;
+            font-weight: 500;
+            letter-spacing: 0.26px;
+            line-height: 28px;
+        }
+    }
+}
+
+.navbar__lang-panel {
+    padding-top: 27px;
+    font-family: $cabin;
+    text-transform: uppercase;
+    li {
+        margin: 0 5px;
+    }
+    .lang-panel__item {
+        a {
+            display: block;
+            @include square(27px);
+            border-radius: 50%;
+            line-height: 27px;
+            color: $gray-light;
+            background: #fff;
+            border-radius: 50%;
+            padding: 0 !important;
+            &.active {
+                background: $blue-lt;
+                color: #fff;
+            }
+        }
+    }
+}
+
+.navbar__contact-info {
+    @include padding-h(5px);
+    @include transition(transform .17s ease-out);
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    right: 0;
+    border-radius: 2px;
+    line-height: 32px;
+    background-color: rgba(1, 93, 111, 0.65);
+    color: #fff;
+    font-family: $roboto;
+
+    a {
+        font-size: 13px;
+        text-transform: none;
+    }
+    [class*='icon-'] {
+        margin-right: 10px;
+    }
+    .icon-mail {
+        width: 20px;
+    }
+    .icon-phone {
+        width: 15px;
+    }
+    @media (max-width: 1023px) {
+        display: none;
+    }
+}
+
+.viewport-height {
+    height: 75vh;
+    @media (min-width: 768px) {
+        min-height: 500px;
+    }
+    @media (min-width: 1200px) {
+        min-height: 615px;
+    }
+    @media (min-width: 1600px) {
+        min-height: 750px;
+    }
+}
+
+.header__jumbo {
+    position: relative;
+    padding-top: $header-nav-height;
+    background-image: url(../images/bg/bg-landing-jumbo.png);
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    @include jumbo-gradient;
+    &.header__jumbo--contact {
+        background-image: url(../images/bg/bg-contact-jumbo.jpg);
+    }
+    &.header__jumbo--feesten {
+        @media (max-width: 767px) and (orientation: portrait) {
+            background-image: url(../images/bg/bg-feesten-jumbo-mobile.jpg);
+        }
+        background-image: url(../images/bg/bg-feesten-jumbo.jpg);
+    }
+    &.header__jumbo--fiesters {
+        background-image: url(../images/bg/bg-fiesters-jumbo.jpg);
+    }
+    &.header__jumbo--spec {
+        background-image: url(../images/bg/bg-spec-jumbo.jpg);
+        @media (max-width: 767px) and (orientation: portrait) {
+            background-image: url(../images/bg/bg-spec-jumbo-mobile.jpg);
+        }
+    }
+    @media (min-width: 1024px) {
+        padding-top: $header-nav-height-lg;
+    }
+    @media (max-width: 1023px) {
+        padding-top: $header-nav-height-sm;
+    }
+    @media (max-width: 767px) and (orientation: portrait) {
+        background-image: url(../images/bg/bg-landing-jumgo-mobile-portrait.png);
+    }
+}
+
+.page-title {
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.89);
+    letter-spacing: 3px;
+    margin: 20px 0 0 0;
+    @media (min-width: 768px) {
+        font-size: 2rem;
+    }
+    @media (min-width: 1300px) {
+        font-size: 4.5rem;
+    }
+    @media (max-width: 768px) {
+        text-shadow: 0 7px 26px rgba(0, 0, 0, 0.61);
+        color: white;
+        font-size: 40px !important;
+        font-weight: 500;
+        line-height: 1.1;
+        text-align: left;
+        max-width: 275px;
+        display: inline-block;
+    }
+}
+
+.navbar__mobile-menu {
+    display: none;
+}
+
+@media (max-width: 1023px) {
+    .navbar__col:not(.navbar__col--logo) {
+        display: none;
+    }
+    .navbar__mobile-menu {
+        display: block;
+    }
+}

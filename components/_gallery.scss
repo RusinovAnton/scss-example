@@ -1,0 +1,69 @@
+.tile-gallery {
+    [class^='col-'] {
+        padding: 0;
+    }
+    .gallery-link {
+        position: relative;
+        display: block;
+        img {
+            width: 100%;
+        }
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 5px;
+            bottom: 5px;
+            @include square(44px);
+            transition: background-image .3s;
+            background-image: url(../images/icon-search-green.png);
+        }
+        &:hover {
+            &:after {
+                background-image: url(../images/icon-search-white.png);
+            }
+        }
+    }
+    @media (max-width: 767px) {
+        [class^='col-'] {
+            display: none;
+            &:first-child {
+                display: block;
+                .gallery-link {
+                    display: block;
+                    @include before-absolute {
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        background-color: rgba(#000, .3);
+                    }
+                    &:after {
+                        right: auto;
+                        bottom: auto;
+                        @include centered;
+                        @include square(80px);
+                        background-size: 100%;
+                        background-image: url(../images/CAMERA.png);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.feesten__gallery {
+    .gallery-link {
+        width: 100%;
+        height: 210px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: 50%;
+        img {
+            display: none;
+        }
+        @media (min-width: 1200px) {
+            height: 270px;
+        }
+    }
+}
